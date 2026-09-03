@@ -1,5 +1,6 @@
 .env
 .env.local
+upload/ 
 
 target/
 *.class
