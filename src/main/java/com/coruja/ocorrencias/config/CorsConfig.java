@@ -18,7 +18,8 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOriginPatterns(
-                                "http://localhost:*"
+                                "http://localhost:*",
+                                "http://192.168.0.102:*"
                         )
                         .allowedMethods(
                                 "GET",
