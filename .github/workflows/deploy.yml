@@ -17,6 +17,17 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Verificar estrutura
+        run: |
+          echo "=== RAIZ ==="
+          ls -la
+
+          echo "=== SUBMODULES ==="
+          git submodule status
+
+          echo "=== BACKEND ==="
+          ls -la OcorrenciaBackEnd
+
       - name: Login Docker Hub
         uses: docker/login-action@v3
         with:
