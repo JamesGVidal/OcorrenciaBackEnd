@@ -7,26 +7,12 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
 
       - name: Checkout do código
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Verificar estrutura
-        run: |
-          echo "=== RAIZ ==="
-          ls -la
-
-          echo "=== SUBMODULES ==="
-          git submodule status
-
-          echo "=== BACKEND ==="
-          ls -la OcorrenciaBackEnd
 
       - name: Login Docker Hub
         uses: docker/login-action@v3
@@ -37,6 +23,6 @@ jobs:
       - name: Build da imagem
         uses: docker/build-push-action@v6
         with:
-          context: ./OcorrenciaBackEnd
+          context: .
           push: true
           tags: tunerw/ocorrencias-backend:latest
