@@ -24,6 +24,6 @@ jobs:
       - name: Build da imagem
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./OcorrenciaBackEnd
           push: true
           tags: tunerw/ocorrencias-backend:latest
